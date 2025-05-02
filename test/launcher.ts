@@ -5,7 +5,7 @@ process.env.TABLE_NAME = "SpacesTable-0efb7b77b54b";
 
 handler(
   {
-    HttpMethod: "POST",
+    httpMethod: "POST",
     body: JSON.stringify({
       location: "san diego, ca",
     }),
