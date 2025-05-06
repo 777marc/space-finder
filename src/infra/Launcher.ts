@@ -13,4 +13,5 @@ const lambdaStack = new LambdaStack(app, "LambdaStack", {
 const authStack = new AuthStack(app, "AuthStack");
 new ApiStack(app, "ApiStack", {
   spacesLambdaIntegration: lambdaStack.spacesLambdaIntegration,
+  userPool: authStack.userPool,
 });
