@@ -5,14 +5,14 @@ process.env.TABLE_NAME = "SpacesTable-0efb7b77b54b";
 
 handler(
   {
-    httpMethod: "POST",
-    // queryStringParameters: {
-    //   id: "8e4991d4-ada6-4a80-9077-6eb7286fc995",
-    // },
-    body: JSON.stringify({
-      location: "San Bernadino, CA",
-      name: "default location",
-    }),
+    httpMethod: "DELETE",
+    queryStringParameters: {
+      id: "1e61fef3-3a50-4398-9692-674dcfb0c5b7",
+    },
+    // body: JSON.stringify({
+    //   location: "Jacksonville, FL",
+    //   name: "default location",
+    // }),
   } as any,
   {} as any
 );
