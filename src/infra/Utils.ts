@@ -9,7 +9,6 @@ export function getSuffixFromStack(stack: Stack) {
 
 export function hasAdminGroup(event: APIGatewayProxyEvent) {
   const groups = event.requestContext.authorizer?.claims["cognito:groups"];
-  console.log("grps:", groups);
   if (groups) {
     return (groups as string).includes("admins");
   }

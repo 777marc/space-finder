@@ -4,7 +4,6 @@ import {
   UserPool,
   UserPoolClient,
 } from "aws-cdk-lib/aws-cognito";
-import { CfnUserGroup } from "aws-cdk-lib/aws-elasticache";
 import { Construct } from "constructs";
 
 export class AuthStack extends Stack {
