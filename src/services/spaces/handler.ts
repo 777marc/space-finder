@@ -29,13 +29,11 @@ async function handler(
         return putResponse;
       case "DELETE":
         const deleteResponse = await deleteSpace(event, ddbClient);
-        console.log(deleteResponse);
         return deleteResponse;
       default:
         break;
     }
   } catch (error) {
-    console.log(error);
     if (error instanceof MissingFieldError) {
       return {
         statusCode: 400,

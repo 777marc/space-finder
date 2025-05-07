@@ -17,7 +17,7 @@ export async function deleteSpace(
     if ("id" in event.queryStringParameters) {
       const spaceId = event.queryStringParameters["id"];
 
-      const deleteResult = await ddbClient.send(
+      await ddbClient.send(
         new DeleteItemCommand({
           TableName: process.env.TABLE_NAME,
           Key: {
@@ -25,8 +25,6 @@ export async function deleteSpace(
           },
         })
       );
-
-      console.log(deleteResult);
 
       return {
         statusCode: 200,

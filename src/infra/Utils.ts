@@ -1,5 +1,5 @@
 import { Fn, Stack } from "aws-cdk-lib";
-import { APIGatewayAuthorizerEvent, APIGatewayProxyEvent } from "aws-lambda";
+import { APIGatewayProxyEvent } from "aws-lambda";
 
 export function getSuffixFromStack(stack: Stack) {
   const shortStackId = Fn.select(2, Fn.split("/", stack.stackId));
@@ -9,7 +9,9 @@ export function getSuffixFromStack(stack: Stack) {
 
 export function hasAdminGroup(event: APIGatewayProxyEvent) {
   const groups = event.requestContext.authorizer?.claims["cognito:groups"];
+  console.log("grps:", groups);
   if (groups) {
     return (groups as string).includes("admins");
   }
+  return false;
 }
